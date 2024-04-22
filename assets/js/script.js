@@ -2,7 +2,7 @@
 let taskList = JSON.parse(localStorage.getItem("tasks")) || [];
 let nextId = JSON.parse(localStorage.getItem("nextId")) || 0;
 
-$('#task-form').submit(function(event) {
+$('#task-form').submit(function (event) {
     event.preventDefault();
     const title = $('#task-title').val().trim();
     const description = $('#task-description').val().trim();
@@ -47,8 +47,7 @@ function createTaskCard(task) {
     card.innerHTML = `
         <div class="card-header">
             <h5 class="card-title">${task.title}</h5>
-            
-        </div>
+             </div>
         <div class="card-body">
             <p class="card-text">${task.description}</p>
             <p class="card-text">Due Date: ${task.dueDate}</p>
@@ -67,7 +66,7 @@ function createTaskCard(task) {
 function renderTaskList() {
 
     // check do we have STORED Data(?)
-    if(!taskList) {
+    if (!taskList) {
         taskList = [];
     }
 
@@ -87,16 +86,16 @@ function renderTaskList() {
 
     console.log("Dataset: ", taskList)
 
-    for(let task of taskList) {  // for of loop
-        if(task.status === 'to-do') {
+    for (let task of taskList) {  // for of loop
+        if (task.status === 'to-do') {
             toDoList.append(createTaskCard(task))
-        } else if(task.status === 'in-progress') {
+        } else if (task.status === 'in-progress') {
             inProgressList.append(createTaskCard(task))
-        } else if(task.status === 'done') {
+        } else if (task.status === 'done') {
             doneList.append(createTaskCard(task))
-        } 
-    } 
-    
+        }
+    }
+
     // Make each task card draggable
     /*
     $('.task-card').draggable({
@@ -107,9 +106,9 @@ function renderTaskList() {
     });
     */
     $('.draggable').draggable({
-      //  revert: 'invalid', // Snap back to original position if not dropped in a droppable area
+        //  revert: 'invalid', // Snap back to original position if not dropped in a droppable area
         cursor: 'move', // Change cursor to indicate draggable element
-      //  stack: '.card', // Maintain the stack order of draggable elements
+        //  stack: '.card', // Maintain the stack order of draggable elements
         opacity: 0.7,
         zIndex: 100
     });
@@ -146,16 +145,16 @@ function handleDrop(event, ui) {
 $(document).ready(function () {
     renderTaskList();
     // Make the "in-progress" lane droppable
-   /*
-    $('#in-progress').droppable({
-        drop: handleDrop
-    });
-
-    // Make the "done" lane droppable
-    $('#done').droppable({
-        drop: handleDrop
-    });
-    */
+    /*
+     $('#in-progress').droppable({
+         drop: handleDrop
+     });
+ 
+     // Make the "done" lane droppable
+     $('#done').droppable({
+         drop: handleDrop
+     });
+     */
     $('.lane').droppable({
         accept: '.draggable',
         drop: handleDrop
@@ -164,12 +163,12 @@ $(document).ready(function () {
     $(document).on('click', '.delete-task', function () {
         // Get the parent task card element
         const taskCard = $(this).closest('.task-card');
-        
+
         // Remove the task card from the DOM
         taskCard.remove();
-        
+
         // You may also want to remove the task from the taskList array and update localStorage here
     });
 
-    
+
 });
