@@ -63,8 +63,6 @@ function createTaskCard(task) {
     return card
 }
 
-
-
 // Todo: create a function to render the task list and make cards draggable
 function renderTaskList() {
 
