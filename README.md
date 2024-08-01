@@ -5,6 +5,10 @@ This is a task board management app designed to help you keep track of To-Do's a
 
 This app uses standard HTML, CSS, and javaScript.
 
+Live URL:
+
+https://taskboardbycr.netlify.app/
+
 Screenshot:
 
 ![TB](https://github.com/user-attachments/assets/f13bd2b0-8b21-474c-b32c-e9f942247ae8)
