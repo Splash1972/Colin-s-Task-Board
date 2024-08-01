@@ -1,4 +1,14 @@
 # Colin-s-Task-Board
 
-Here we go.  Atempting something that I understand, but have trouble doing on my own (04-02-2024)
+
+This is a task board management app designed to help you keep track of To-Do's and organized by whether or not they're in progress or done, color coded for visual ease.
+
+This app uses standard HTML, CSS, and javaScript.
+
+Screenshot:
+
+
+
+GitHub Repo link:
+
 

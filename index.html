@@ -27,29 +27,28 @@
     </div>
 
     <!-- Modal from Bootstrap -->
-
     <div class="modal fade" id="formModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Add Task</h5>
-            <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="formModalLabel">Add Task</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form id="task-form">
-              <div class="mb-3">
-                <label for="task-title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="task-title" required>
+            <form class="container row" id="form">
+              <div class="mb-3 col-6">
+                <label for="titleInput" class="form-label">Title</label>
+                <input type="text" class="form-control" id="titleInput" required>
               </div>
               <div class="mb-3">
-                <label for="task-description" class="form-label">Description</label>
-                <textarea class="form-control" id="task-description" rows="3" required></textarea>
+                <label for="taskInput" class="form-label">Description</label>
+                <input type="text" class="form-control" id="taskInput" required>
               </div>
-              <div class="mb-3">
-                <label for="task-due-date" class="form-label">Due Date</label>
-                <input type="date" class="form-control" id="task-due-date" required>
+              <div class="col-6">
+                <label for="dateInput" class="form-label">Due Date</label>
+                <input type="text" class="form-control" id="dateInput" required>
               </div>
-              <button type="submit" class="btn btn-success">Add Task</button>
+              <button type="submit" class="btn btn-success" id="saveTask">Add Task</button>
             </form>
           </div>
         </div>
@@ -63,7 +62,7 @@
             <h2 class="card-title mb-1">To Do</h2>
           </div>
           <div class="card-body bg-light">
-            <div id="todo-cards" class="draggable"></div>
+            <div id="todo-cards"></div>
           </div>
         </div>
       </div>
@@ -76,16 +75,16 @@
             <div id="in-progress-cards"></div>
           </div>
         </div>
+      </div>
+      <div class="col-12 col-lg-4 d-flex">
+        <div id="done" class="card border-light mb-3 lane flex-grow-1">
+          <div class="card-header bg-white">
+            <h2 class="card-title mb-1">Done</h2>
+          </div>
+          <div class="card-body bg-light">
+            <div id="done-cards"></div>
+          </div>
         </div>
-        <div class="col-12 col-lg-4 d-flex">
-          <div id="done" class="card border-light mb-3 lane flex-grow-1">
-            <div class="card-header bg-white">
-              <h2 class="card-title mb-1">Done</h2>
-            </div>
-            <div class="card-body bg-light">
-              <div id="done-cards"></div>
-          </div>
-          </div>
       </div>
     </div>
   </div>
@@ -94,13 +93,14 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
 
   <script src="./assets/js/script.js"></script>
-  
-<script>dayjs().format()</script>
+
+  <script>dayjs().format()</script>
 
 </body>
+
 </html>
